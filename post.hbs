@@ -17,7 +17,7 @@
 		</h1>
 	</header>
 
-    <article role="main" class="{{post_class}}">
+    <article role="main" class="{{post_class}}" data-swiftype-index="true">
     
         <header>
             <h1>{{title}}</h1>
@@ -45,73 +45,99 @@
         <section class="share">
         	<ul>
 				<li>
-					<a class="Email" href="mailto:?&subject={{@blog.title}}%3A%20{{title}}&body={{title}}%0D%0A{{@blog.url}}{{url}}%0D%0A%0D%0A{{excerpt words="45"}}%2E%2E%2E">Email</a>
+					<a href="mailto:?&subject={{encode @blog.title}}%3A%20{{encode title}}&body={{encode title}}%0D%0A{{url absolute="true"}}%0D%0A%0D%0A{{excerpt words="45"}}%2E%2E%2E">Email</a>
 				</li>
 				<li>
-					<a class="twitter" href="https://twitter.com/home?status={{@blog.url}}{{url}}%20{{tags prefix="%23" separator=" %23" autolink="false"}}">Twitter</a>
+					<a href="https://twitter.com/home?status={{url absolute="true"}}%20{{tags prefix="%23" separator="%20%23" autolink="false"}}">Twitter</a>
 				</li>
 				<li>
-					<a class="Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{@blog.url}}{{url}}">Facebook</a>
+					<a href="https://www.facebook.com/sharer/sharer.php?u={{url absolute="true"}}">Facebook</a>
 				</li>
 				<li>
-					<a class="Google+" href="https://plus.google.com/share?url={{@blog.url}}{{url}}">Google+</a>
+					<a href="https://plus.google.com/share?url={{url absolute="true"}}">Google+</a>
 				</li>
 				<li>
-					<a class="LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url={{@blog.url}}{{url}}&title={{title}}&summary={{excerpt words="45"}}&source={{@blog.title}}">LinkedIn</a>
+					<a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}&summary={{excerpt words="45"}}&source={{@blog.title}}">LinkedIn</a>
 				</li>
 				
 {{!------------ SOCIAL LINKS: MOVE THE LIST ITEM OUT OF THIS COMMENT BLOCK TO ENABLE ------------}}
 
 {{!--PINTEREST
-	{{#if image}}<li><a class="Pinterest" href="https://pinterest.com/pin/create/button/?url={{@blog.title}}&media={{@blog.url}}{{url}}&description={{excerpt words="20"}}">Pinterest</a></li>{{/if}}
+				<li>
+					<a href="https://pinterest.com/pin/create/button/?{{url absolute="true"}}{{#if image}}&media={{@blog.url}}{{image}}{{/if}}&description={{excerpt words="20"}}">Pinterest</a>
+				</li>
 --}}
 
 {{!--TUMBLR
-	<li><a class="Tumblr" href="http://www.tumblr.com/share/link?url={{@blog.url}}{{url}}&name={{title}}&description={{excerpt words="45"}}">Tumblr</a></li>
+				<li>
+					<a href="http://www.tumblr.com/share/link?url={{url absolute="true"}}&name={{encode title}}&description={{excerpt words="45"}}">Tumblr</a>
+				</li>
 --}}
 
 {{!--REDDIT
-	<li><a class="reddit" href="http://www.reddit.com/submit/?url={{@blog.url}}{{url}}&title={{title}}">reddit</a></li>
+				<li>
+					<a href="http://www.reddit.com/submit/?url={{url absolute="true"}}&title={{encode title}}">reddit</a>
+				</li>
 --}}
 
 {{!--XING
-	<li><a class="xing" href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url={{@blog.url}}{{url}}">Xing</a></li>
+				<li>
+					<a href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url={{url absolute="true"}}">Xing</a>
+				</li>
 --}}
 
 {{!--VK
-	<li><a class="vk" href="https://vk.com/share.php?url={{@blog.url}}{{url}}&title={{title}}&description={{excerpt words="45"}}{{#if image}}&image={{@blog.url}}{{image}}{{/if}}&noparse=true">VK</a></li>
+				<li>
+					<a href="https://vk.com/share.php?url={{url absolute="true"}}&title={{encode title}}&description={{excerpt words="45"}}{{#if image}}&image={{@blog.url}}{{image}}{{/if}}&noparse=true">VK</a>
+				</li>
 --}}
 
 {{!--BUFFER
-	<li><a class="buffer" href="https://bufferapp.com/add/?url={{@blog.url}}{{url}}&text={{excerpt words="45"}}">Buffer</a></li>
+				<li>
+					<a href="https://bufferapp.com/add/?url={{url absolute="true"}}&text={{excerpt words="20"}}">Buffer</a>
+				</li>
 --}}
 
 {{!--STUMBLEUPON
-	<li><a class="stumbleupon" href="https://www.stumbleupon.com/submit?url={{@blog.url}}{{url}}%2F&title={{title}}">StumbleUpon</a></li>
+				<li>
+					<a href="https://www.stumbleupon.com/submit?url={{url absolute="true"}}%2F&title={{encode title}}">StumbleUpon</a>
+				</li>
 --}}
 
 {{!--SINA-WEIBO
-	<li><a class="sina-weibo" href="http://service.weibo.com/share/share.php?url={{@blog.url}}{{url}}&title={{title}}%0D%0A{{excerpt words="20"}}%20{{tags prefix="%23" separator="%23 %23" suffix="%23" autolink="false"}}{{#if image}}&pic={{@blog.url}}{{image}}{{/if}}">新浪微博</a></li>
+				<li>
+					<a href="http://service.weibo.com/share/share.php?url={{url absolute="true"}}&title={{encode title}}%0D%0A{{excerpt words="20"}}%20{{tags prefix="%23" separator="%23 %23" suffix="%23" autolink="false"}}{{#if image}}&pic={{@blog.url}}{{image}}{{/if}}">新浪微博</a>
+				</li>
 --}}
 
 {{!--BAIDU
-	<li><a class="baidu" href="http://hi.baidu.com/pub/show/share?url={{@blog.url}}{{url}}&title={{title}}">Baidu空间</a></li>
+				<li>
+					<a href="http://hi.baidu.com/pub/show/share?url={{url absolute="true"}}&title={{encode title}}">Baidu空间</a>
+				</li>
 --}}
 
 {{!--RENREN
-	<li><a class="renren" href="http://share.renren.com/share/buttonshare?link={{@blog.url}}{{url}}&title={{title}}">人人网</a></li>
+				<li>
+					<a href="http://share.renren.com/share/buttonshare?link={{url absolute="true"}}&title={{encode title}}">人人网</a>
+				</li>
 --}}
 
 {{!--TENCENT-WEIBO
-	<li><a class="qq tencent-weibo" href="http://v.t.qq.com/share/share.php?title={{title}}%3A%20{{excerpt words="20"}}%20{{tags prefix="%23" separator="%23 %23" suffix="%23" autolink="false"}}&url={{@blog.url}}{{url}}">腾讯微博</a></li>
+				<li>
+					<a href="http://v.t.qq.com/share/share.php?title={{encode title}}%3A%20{{excerpt words="20"}}%20{{tags prefix="%23" separator="%23 %23" suffix="%23" autolink="false"}}&url={{url absolute="true"}}">腾讯微博</a>
+				</li>
 --}}
 
 {{!--QQZONE
-	<li><a class="QQzone" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title={{title}}&url={{@blog.url}}{{url}}&summary={{excerpt words="20"}}">QQ空间</a></li>
+				<li>
+					<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title={{encode title}}&url={{url absolute="true"}}&summary={{excerpt words="20"}}">QQ空间</a>
+				</li>
 --}}
 
 {{!--PENGYOU
-	<li><a class="pengyou" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?to=pengyou&title={{title}}&url={{@blog.url}}{{url}}&summary={{excerpt words="20"}}">腾讯朋友网</a></li>
+				<li>
+					<a href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?to=pengyou&title={{encode title}}&url={{url absolute="true"}}&summary={{excerpt words="20"}}">腾讯朋友网</a>
+				</li>
 --}}
 
 {{!--------------- END SOCIAL LINKS --------------------------------------------------------------}}
@@ -129,15 +155,37 @@
 					</div>
                 {{/if}}
                 <div class="author-info meta">
-					<a href="{{url}}">{{name}}</a>
-                    {{#if location}}&nbsp;&bull;&nbsp;<span>{{location}}</span>{{/if}}
+					<a href="{{url}}" class="fn">{{name}}</a>
+                    {{#if location}}&nbsp;&bull;&nbsp;<span class="adr">{{location}}</span>{{/if}}
                     {{#if website}}&nbsp;&bull;&nbsp;<a class="site" href="{{website}}">{{website}}</a>{{/if}}
                     {{#if bio}}<p class="bio">{{bio}}</p>{{/if}}
                 </div>
         </footer>
     {{/author}}
+	<div id="disqus_thread"></div>
+	<script type="text/javascript">
+		var disqus_shortname = 'iyware';
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();
+	</script>
+	<noscript>
+		<p style="text-align:center;">
+			<small>Please enable JavaScript to view the <a href="https://disqus.com/home/forums/iyware/">comments powered by Disqus.</a></small>
+		</p>
+	</noscript>
+	
+    {{! post footer ad }}
+	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+	<ins class="adsbygoogle" style="display:block;width:320px;height:100px;margin:0 auto;" data-ad-client="ca-pub-5811335018322110" data-ad-slot="8562617448"></ins>
+	<script>
+		(adsbygoogle = window.adsbygoogle || []).push({});
+	</script>  
 
     </article>
+  
 {{/post}}
 
 {{> "footer"}}
