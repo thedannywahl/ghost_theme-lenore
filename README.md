@@ -6,6 +6,12 @@ The Lenore theme version 1.2 (2015.03.19.00) for Ghost, by Danny Wahl.
 
 A demo of this theme is available at [lenore.iyware.com](http://lenore.iyware.com)
 
+## Features
+
+A full list of features can be found on the demo site at [lenore.iyware.com/features/](http://lenore.iyware.com/features/).
+
+A variety of layouts are available for this theme as well.  You can test them all on the demo site at [lenore.iyware.com/layouts/](http://lenore.iyware.com/layouts/)
+
 ## Changelog
 * v1.2 (2015.03.19)
     * fix hcard schema
