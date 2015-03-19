@@ -1,13 +1,13 @@
 # Lenore: A Theme for Writing
 
-The Lenore theme version 1.1 (2015.03.11.00) for Ghost, by Danny Wahl.
+The Lenore theme version 1.2 (2015.03.19.00) for Ghost, by Danny Wahl.
 
 ## Demo
 
 A demo of this theme is available at [lenore.iyware.com](http://lenore.iyware.com)
 
 ## Changelog
-* v1.12 (2015.03.19)
+* v1.2 (2015.03.19)
     * fix hcard schema
     * update share links to Ghost 0.5.10 API
 * v1.1 (2015.03.13)
