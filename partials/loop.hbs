@@ -1,0 +1,40 @@
+{{#foreach posts}}
+	<div class="loop {{#if @last}}last{{/if}}">
+	<article class="{{post_class}}">
+    	{{#if image}}
+            <a href="{{url}}" class="post-image" style="background-image:url('{{image}}')">
+               	<img src="{{image}}" alt="Post '{{title}}' featured image">
+			</a>
+		{{/if}}
+
+		<header>
+        	<h2><a href="{{url}}">{{title}}</a></h2>
+
+			<small class="meta">
+				{{#author}}
+					{{#if image}}
+						<a href="{{url}}" class="author" style="background-image:url('{{image}}');"><img src="{{image}}" alt="{{name}}'s picture"></a>					{{/if}}
+					<a href="{{url}}">{{name}}</a>
+				{{/author}}
+				&nbsp;&bull;&nbsp;
+				<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
+				{{#if tags}}
+					&nbsp;&bull;&nbsp;
+					<span class="tags">{{tags}}</span>
+				{{/if}}
+			</small>
+		</header>
+
+    	<div class="text">
+        	<p>{{excerpt words="45"}}</p>
+		</div>
+		
+		<small class="continue">
+			<a href="{{url}}">Continue Reading</a>
+		</small>
+
+	</article>
+	</div>
+{{/foreach}}
+
+{{pagination}}

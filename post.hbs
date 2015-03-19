@@ -1,0 +1,143 @@
+{{!< default}}
+
+{{#post}}
+
+	<header role="banner" class="header-main {{#if image}}" style="background-image: url({{image}}){{else}}no-image{{/if}}">
+		{{#if @blog.navigation}}
+    		{{navigation}}
+		{{/if}}
+		<h1>
+    		<a href="{{@blog.url}}">
+        		{{#if @blog.logo}}
+            		<img src="{{@blog.logo}}" alt="{{@blog.title}}">
+				{{else}}
+            		{{@blog.title}}
+				{{/if}}
+			</a>
+		</h1>
+	</header>
+
+    <article role="main" class="{{post_class}}">
+    
+        <header>
+            <h1>{{title}}</h1>
+
+			<small class="meta">
+				{{#author}}
+					{{#if image}}
+						<a href="{{url}}" class="author" style="background-image:url('{{image}}');"><img src="{{image}}" alt="{{name}}'s picture"></a>
+					{{/if}}
+					<a href="{{url}}">{{name}}</a>
+				{{/author}}
+				&nbsp;&bull;&nbsp;
+				<time datetime="{{date format='YYYY-MM-DD'}}">{{date format="MMMM DD, YYYY"}}</time>
+				{{#if tags}}
+					&nbsp;&bull;&nbsp;
+					<span class="tags">{{tags}}</span>
+				{{/if}}
+			</small>
+        </header>
+
+        <div class="text">
+            {{content}}
+        </div>
+
+        <section class="share">
+        	<ul>
+				<li>
+					<a class="Email" href="mailto:?&subject={{@blog.title}}%3A%20{{title}}&body={{title}}%0D%0A{{@blog.url}}{{url}}%0D%0A%0D%0A{{excerpt words="45"}}%2E%2E%2E">Email</a>
+				</li>
+				<li>
+					<a class="twitter" href="https://twitter.com/home?status={{@blog.url}}{{url}}%20{{tags prefix="%23" separator=" %23" autolink="false"}}">Twitter</a>
+				</li>
+				<li>
+					<a class="Facebook" href="https://www.facebook.com/sharer/sharer.php?u={{@blog.url}}{{url}}">Facebook</a>
+				</li>
+				<li>
+					<a class="Google+" href="https://plus.google.com/share?url={{@blog.url}}{{url}}">Google+</a>
+				</li>
+				<li>
+					<a class="LinkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url={{@blog.url}}{{url}}&title={{title}}&summary={{excerpt words="45"}}&source={{@blog.title}}">LinkedIn</a>
+				</li>
+				
+{{!------------ SOCIAL LINKS: MOVE THE LIST ITEM OUT OF THIS COMMENT BLOCK TO ENABLE ------------}}
+
+{{!--PINTEREST
+	{{#if image}}<li><a class="Pinterest" href="https://pinterest.com/pin/create/button/?url={{@blog.title}}&media={{@blog.url}}{{url}}&description={{excerpt words="20"}}">Pinterest</a></li>{{/if}}
+--}}
+
+{{!--TUMBLR
+	<li><a class="Tumblr" href="http://www.tumblr.com/share/link?url={{@blog.url}}{{url}}&name={{title}}&description={{excerpt words="45"}}">Tumblr</a></li>
+--}}
+
+{{!--REDDIT
+	<li><a class="reddit" href="http://www.reddit.com/submit/?url={{@blog.url}}{{url}}&title={{title}}">reddit</a></li>
+--}}
+
+{{!--XING
+	<li><a class="xing" href="https://www.xing-share.com/app/user?op=share;sc_p=xing-share;url={{@blog.url}}{{url}}">Xing</a></li>
+--}}
+
+{{!--VK
+	<li><a class="vk" href="https://vk.com/share.php?url={{@blog.url}}{{url}}&title={{title}}&description={{excerpt words="45"}}{{#if image}}&image={{@blog.url}}{{image}}{{/if}}&noparse=true">VK</a></li>
+--}}
+
+{{!--BUFFER
+	<li><a class="buffer" href="https://bufferapp.com/add/?url={{@blog.url}}{{url}}&text={{excerpt words="45"}}">Buffer</a></li>
+--}}
+
+{{!--STUMBLEUPON
+	<li><a class="stumbleupon" href="https://www.stumbleupon.com/submit?url={{@blog.url}}{{url}}%2F&title={{title}}">StumbleUpon</a></li>
+--}}
+
+{{!--SINA-WEIBO
+	<li><a class="sina-weibo" href="http://service.weibo.com/share/share.php?url={{@blog.url}}{{url}}&title={{title}}%0D%0A{{excerpt words="20"}}%20{{tags prefix="%23" separator="%23 %23" suffix="%23" autolink="false"}}{{#if image}}&pic={{@blog.url}}{{image}}{{/if}}">新浪微博</a></li>
+--}}
+
+{{!--BAIDU
+	<li><a class="baidu" href="http://hi.baidu.com/pub/show/share?url={{@blog.url}}{{url}}&title={{title}}">Baidu空间</a></li>
+--}}
+
+{{!--RENREN
+	<li><a class="renren" href="http://share.renren.com/share/buttonshare?link={{@blog.url}}{{url}}&title={{title}}">人人网</a></li>
+--}}
+
+{{!--TENCENT-WEIBO
+	<li><a class="qq tencent-weibo" href="http://v.t.qq.com/share/share.php?title={{title}}%3A%20{{excerpt words="20"}}%20{{tags prefix="%23" separator="%23 %23" suffix="%23" autolink="false"}}&url={{@blog.url}}{{url}}">腾讯微博</a></li>
+--}}
+
+{{!--QQZONE
+	<li><a class="QQzone" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?title={{title}}&url={{@blog.url}}{{url}}&summary={{excerpt words="20"}}">QQ空间</a></li>
+--}}
+
+{{!--PENGYOU
+	<li><a class="pengyou" href="http://sns.qzone.qq.com/cgi-bin/qzshare/cgi_qzshare_onekey?to=pengyou&title={{title}}&url={{@blog.url}}{{url}}&summary={{excerpt words="20"}}">腾讯朋友网</a></li>
+--}}
+
+{{!--------------- END SOCIAL LINKS --------------------------------------------------------------}}
+
+			</ul>
+        </section>
+
+    {{#author}}
+        <footer class="post-footer vcard cf" role="contentinfo">
+                {{#if image}}
+                	<div class="wrapper">
+                	<a href="{{url}}" class="author" style="background-image: url('{{image}}');">
+                    	<img src="{{image}}" alt="{{name}}">
+					</a>
+					</div>
+                {{/if}}
+                <div class="author-info meta">
+					<a href="{{url}}">{{name}}</a>
+                    {{#if location}}&nbsp;&bull;&nbsp;<span>{{location}}</span>{{/if}}
+                    {{#if website}}&nbsp;&bull;&nbsp;<a class="site" href="{{website}}">{{website}}</a>{{/if}}
+                    {{#if bio}}<p class="bio">{{bio}}</p>{{/if}}
+                </div>
+        </footer>
+    {{/author}}
+
+    </article>
+{{/post}}
+
+{{> "footer"}}
