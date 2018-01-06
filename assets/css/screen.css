@@ -27,18 +27,18 @@
  * 25. Pagination anchor hover settings
  */
 
-/* <==00
+/* <==00. Color values reference table
  * top border/links/nav: #4b87aa
  * hover color:          #068bd8
  * dark borders:         #ededee
  * light borders:        #f7f7f7
  */
- 
-/*normalize.css v3.0.2 (modified) | MIT License | git.io/normalize*/
+
+/* normalize.css v3.0.2 (modified) | MIT License | git.io/normalize */
 html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:100%}body{margin:0}article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary{display:block}audio,canvas,progress,video{display:inline-block;vertical-align:baseline}audio:not([controls]){display:none;height:0}[hidden],template{display:none}a{background-color:transparent}a:active,a:hover{outline:0}abbr[title]{border-bottom:1px dotted currentColor}b,strong{font-weight:700}dfn{font-style:italic}h1{font-size:2em;margin:.67em 0}mark{background:#ff0;color:#000}small{font-size:.8em}sub,sup{font-size:.75em;line-height:0;position:relative;vertical-align:baseline}sup{top:-.5em}sub{bottom:-.25em}img{border:0}svg:not(:root){overflow:hidden}figure{margin:1em 0}hr{-moz-box-sizing:content-box;box-sizing:content-box;height:0}pre{overflow:auto}code,kbd,pre,samp{font-family:monospace,monospace;font-size:1em}button,input,optgroup,select,textarea{color:inherit;font:inherit;margin:0}button{overflow:visible}button,select{text-transform:none}button,html input[type=button],input[type=reset],input[type=submit]{-webkit-appearance:button;cursor:pointer}button[disabled],html input[disabled]{cursor:default}button::-moz-focus-inner,input::-moz-focus-inner{border:0;padding:0}input{line-height:normal}input[type=checkbox],input[type=radio]{box-sizing:border-box;padding:0}input[type=number]::-webkit-inner-spin-button,input[type=number]::-webkit-outer-spin-button{height:auto}input[type=search]{-webkit-appearance:textfield;-moz-box-sizing:content-box;-webkit-box-sizing:content-box;box-sizing:content-box}input[type=search]::-webkit-search-cancel-button,input[type=search]::-webkit-search-decoration{-webkit-appearance:none}fieldset{border:1px solid;margin:0;padding:.35em .625em .75em}legend{border:0;padding:0}textarea{overflow:auto}optgroup{font-weight:700}table{border-collapse:collapse;border-spacing:0}td,th{padding:0}
 
 .cf:before,
-.cf:after { 
+.cf:after {
 	content: " ";
 	display: table;
 }
@@ -62,9 +62,9 @@ html{font-family:sans-serif;-ms-text-size-adjust:100%;-webkit-text-size-adjust:1
 }
 
 html {
-    font-size: 1em; /*<==01*/
-    font-family: "Open Sans"; /*<==02*/
-    color: #444; /*<==03*/
+    font-size: 1em; /* <==01. Mobile font size */
+    font-family: "Open Sans"; /* <==02. Site font-family */
+    color: #444; /* <==03. Font color */
 }
 
 .footer-main p {
@@ -102,7 +102,7 @@ html {
 
 @media all and (min-width: 25rem) {
 	html {
-		font-size: 1.125rem; /*<==04*/
+		font-size: 1.125rem; /* <==04. Medium screen font size */
 	}
     .footer-main p {
     	float: left;
@@ -122,12 +122,12 @@ html {
 }
 @media all and (min-width: 37.5rem) {
     html {
-	    font-size: 1.25rem; /*<==05*/
+	    font-size: 1.25rem; /* <==05. Large screen font size */
     }
     .loop .title,
     .loop .description,
     article {
-	    max-width: 34rem; /*<==06*/
+	    max-width: 34rem; /* <==06. Article max-width */
     }
     .post-footer .wrapper {
     	left: 0;
@@ -143,16 +143,16 @@ html {
 }
 
 header {
-	font-size: 1.25rem; /*<==07*/
+	font-size: 1.25rem; /* <==07. Header module relative size */
 	padding: 0 0.5rem;
 }
 footer {
-	font-size: 0.8rem; /*<==08*/
+	font-size: 0.8rem; /* <==08. Footer module relative size */
 	padding: 0 0.5rem;
 }
 article,
 article header {
-	font-size: 1rem; /*<==09*/
+	font-size: 1rem; /* <==09. Article module relative size */
 	padding: 0;
 }
 article footer {
@@ -164,18 +164,18 @@ article {
 }
 
 body {
-	box-shadow: #4b87aa 0 0.16em 0 0 inset; /*<==10*/
+	box-shadow: #4b87aa 0 0.16em 0 0 inset; /* <==10. Box shadow at top of page */
 }
 
 a {
-	color: #4b87aa; /*<==11*/
+	color: #4b87aa; /* <==11. Primary anchor color */
 	text-decoration: none;
 	transition: all 0.25s;
 }
 a:hover,
 a:focus,
 a:active{
-	color: #068bd8; /*<==12*/
+	color: #068bd8; /* <==12. Primary anchor hover color */
 }
 
 h1 {
@@ -245,16 +245,16 @@ iframe{
 .nav {
 	margin: 0 -0.4em;
 	padding: 0;
-	background: #4b87aa; /*<==13*/
+	background: #4b87aa; /* <==13. Navigation background color */
 }
 .nav a {
-	color: #fff; /*<==14*/
+	color: #fff; /* <==14. Navigation anchor color */
 	padding: 0 0.5em;
 }
 .nav a:hover,
 .nav a:focus,
 .nav a:active {
-	background: #068bd8; /*<==15*/
+	background: #068bd8; /* <==15. Navigation anchor hover background color */
 }
 
 .nav li,
@@ -268,7 +268,7 @@ iframe{
 .header-main {
 	border-bottom: 0.2em solid #ededee;
 	position: relative;
-	min-height: 60vh; /* <== 16*/
+	min-height: 60vh; /* <== 16. Header background-image min-height */
 	background-position: center center;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -283,7 +283,7 @@ iframe{
 }
 
 .loop {
-	border-bottom: 0.1em solid #ededee; /*<==17*/
+	border-bottom: 0.1em solid #ededee; /* <==17. Article divider color */
 }
 .loop.last {
 	border-bottom: 0 none;
@@ -307,7 +307,7 @@ article header h2 {
 .meta,
 .meta a,
 .continue a {
-	color: #a4adb6; /*<==18*/
+	color: #a4adb6; /* <==18. Meta data anchor color */
 }
 
 .meta a:hover,
@@ -316,7 +316,7 @@ article header h2 {
 .continue a:hover,
 .continue a:focus,
 .continue a:active {
-	color: #4b87aa; /*<==19*/
+	color: #4b87aa; /* <==19. Meta data anchor hover color */
 }
 
 .author {
@@ -334,7 +334,7 @@ article header h2 {
 
 .continue a,
 .site {
-	border-bottom: 1px solid #a4adb6; /*<==20*/
+	border-bottom: 1px solid #a4adb6; /* <==20. 'Continue reading' underline color */
 }
 
 .share {

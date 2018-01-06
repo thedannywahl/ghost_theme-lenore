@@ -2,7 +2,7 @@
 
 {{#post}}
 
-	<header role="banner" class="header-main {{#if image}}" style="background-image: url({{image}}){{else}}no-image{{/if}}">
+	<header role="banner" class="header-main {{#if feature_image}}" style="background-image: url({{img_url feature_image}}){{else}}no-image{{/if}}">
 		{{#if @blog.navigation}}
     		{{navigation}}
 		{{/if}}
@@ -18,14 +18,14 @@
 	</header>
 
     <article role="main" class="{{post_class}}">
-    
+
         <header>
             <h1>{{title}}</h1>
 
 			<small class="meta">
 				{{#author}}
-					{{#if image}}
-						<a href="{{url}}" class="author" style="background-image:url('{{image}}');"><img src="{{image}}" alt="{{name}}'s picture"></a>
+					{{#if profile_image}}
+						<a href="{{url}}" class="author" style="background-image:url('{{img_url profile_image}}');"><img src="{{img_url profile_image}}" alt="{{name}}'s picture"></a>
 					{{/if}}
 					<a href="{{url}}">{{name}}</a>
 				{{/author}}
@@ -59,12 +59,12 @@
 				<li>
 					<a href="https://www.linkedin.com/shareArticle?mini=true&url={{url absolute="true"}}&title={{encode title}}&summary={{excerpt words="45"}}&source={{@blog.title}}">LinkedIn</a>
 				</li>
-				
+
 {{!------------ SOCIAL LINKS: MOVE THE LIST ITEM OUT OF THIS COMMENT BLOCK TO ENABLE ------------}}
 
 {{!--PINTEREST
 				<li>
-					<a href="https://pinterest.com/pin/create/button/?{{url absolute="true"}}{{#if image}}&media={{@blog.url}}{{image}}{{/if}}&description={{excerpt words="20"}}">Pinterest</a>
+					<a href="https://pinterest.com/pin/create/button/?{{url absolute="true"}}{{#if feature_image}}&media={{img_url feature_image absolute="true"}}{{/if}}&description={{excerpt words="20"}}">Pinterest</a>
 				</li>
 --}}
 
@@ -88,7 +88,7 @@
 
 {{!--VK
 				<li>
-					<a href="https://vk.com/share.php?url={{url absolute="true"}}&title={{encode title}}&description={{excerpt words="45"}}{{#if image}}&image={{@blog.url}}{{image}}{{/if}}&noparse=true">VK</a>
+					<a href="https://vk.com/share.php?url={{url absolute="true"}}&title={{encode title}}&description={{excerpt words="45"}}{{#if feature_image}}&image={{img_url feature_image absolute="true"}}{{/if}}&noparse=true">VK</a>
 				</li>
 --}}
 
@@ -106,7 +106,7 @@
 
 {{!--SINA-WEIBO
 				<li>
-					<a href="http://service.weibo.com/share/share.php?url={{url absolute="true"}}&title={{encode title}}%0D%0A{{excerpt words="20"}}%20{{tags prefix="%23" separator="%23 %23" suffix="%23" autolink="false"}}{{#if image}}&pic={{@blog.url}}{{image}}{{/if}}">新浪微博</a>
+					<a href="http://service.weibo.com/share/share.php?url={{url absolute="true"}}&title={{encode title}}%0D%0A{{excerpt words="20"}}%20{{tags prefix="%23" separator="%23 %23" suffix="%23" autolink="false"}}{{#if feature_image}}&pic={{img_url feature_image absolute="true"}}{{/if}}">新浪微博</a>
 				</li>
 --}}
 
@@ -147,10 +147,10 @@
 
     {{#author}}
         <footer class="post-footer vcard cf" role="contentinfo">
-                {{#if image}}
+                {{#if profile_image}}
                 	<div class="wrapper">
-                	<a href="{{url}}" class="author" style="background-image: url('{{image}}');">
-                    	<img src="{{image}}" alt="{{name}}">
+                	<a href="{{url}}" class="author" style="background-image: url('{{img_url profile_image}}');">
+                    	<img src="{{img_url profile_image}}" alt="{{name}}">
 					</a>
 					</div>
                 {{/if}}
