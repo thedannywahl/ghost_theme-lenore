@@ -1,4 +1,29 @@
 {
-  "name": "Lenore",
-  "version": "1.2"
+  "name": "iy",
+  "description": "A theme for writing.",
+  "version": "1.19.2",
+  "engines": {
+    "ghost": ">=1.0.0"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Danny Wahl",
+    "email": "danny@iywahl.com",
+    "url": "https://iyware.com"
+  },
+  "config": {
+    "posts_per_page": 5
+  },
+  "gpm": {
+    "type": "theme",
+    "categories": [
+      "Minimal",
+      "Personal Blogs"
+    ],
+    "screenshots": {
+      "desktop": "assets/screenshots/screenshot-desktop.jpg",
+      "mobile": "assets/screenshots/screenshot-mobile.jpg"
+    },
+    "demo": "https://lenore.iyware.com"
+  }
 }

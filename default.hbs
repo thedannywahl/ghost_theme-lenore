@@ -4,7 +4,6 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>{{meta_title}}{{#is 'post, page'}} - {{@blog.title}}{{/is}}</title>
-    <meta name="description" content="{{meta_description}}" />
     <meta name="HandheldFriendly" content="True" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="shortcut icon" href="{{asset "/favicon.ico"}}">
@@ -18,7 +17,7 @@
 	{{#is 'post'}}
 		<script type="text/javascript" src="{{asset "js/prism.min.js"}}"></script>
 	{{/is}}
-	
+
 	<script type="text/javascript" src="{{asset "js/jquery.swiftype.min.js"}}"></script>
 	<script type="text/javascript">
 		$('<li class="nav-search-form"><form action="#" onsubmit="stSearch();return false;" autocomplete="on"><label id="nav-search-label" for="st-search-input">Search:</label><input id="search_submit" value="Search" type="submit"><input id="st-search-input" name="search" type="text" placeholder="search https://iyware.com"></form></li>').insertAfter(".nav-search");

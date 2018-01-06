@@ -2,7 +2,7 @@
 
 {{#post}}
 
-	<header role="banner" class="header-main {{#if image}}" style="background-image: url({{image}}){{else}}no-image{{/if}}">
+	<header role="banner" class="header-main {{#if feature_image}}" style="background-image: url({{img_url feature_image}}){{else}}no-image{{/if}}">
 		{{#if @blog.navigation}}
     		{{navigation}}
 		{{/if}}
@@ -18,7 +18,7 @@
 	</header>
 
     <article role="main" class="{{post_class}}" data-swiftype-index="true">
-    
+
         <header>
             <h1>{{title}}</h1>
         </header>
